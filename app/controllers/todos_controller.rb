@@ -5,6 +5,11 @@ class TodosController < ApplicationController
     render json: @todos
   end
 
+  def show
+    @todo = Todo.find(params[:id])
+    render json: @todo
+  end
+
   def new
     @todo = Todo.new
   end
